@@ -1,8 +1,10 @@
 /// <reference types="vite/client" />
 
-declare module '*.vue' {
-  import type { DefineComponent } from 'vue';
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const component: DefineComponent<{}, {}, any>;
-  export default component;
+// Extend/declare any custom env vars (prefix with VITE_ to be exposed to client)
+interface ImportMetaEnv {
+	readonly VITE_APP_NAME?: string;
+	// add more as needed, e.g. readonly VITE_API_BASE_URL: string;
+}
+interface ImportMeta {
+	readonly env: ImportMetaEnv;
 }
