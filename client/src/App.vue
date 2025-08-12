@@ -1,6 +1,6 @@
 <template>
   <main class="app">
-    <p class="">Hola Mundo</p>
+    <p class="bg-white">Hola Mundo</p>
   </main>
 </template>
 

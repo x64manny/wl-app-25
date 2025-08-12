@@ -1,6 +1,4 @@
 :root {
-  --color-neutral-50: #f1f1f1;
-  --color-neutral-900: #0d0f12;
 
   --color-gray-900: #0d0f12;
   --color-gray-700: #25282c;
@@ -17,8 +15,8 @@
   --color-secondary-200: #4a9c2a;
   --color-secondary-500: #357a1f;
 
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: #f1f1f1;
+  --color-black: #0d0f12;
 
   --color-black-alpha-80: rgba(255, 255, 255, 0.8);
   --color-black-alpha-60: rgba(255, 255, 255, 0.6);
@@ -75,8 +73,6 @@
   /* Text color aliases with Tailwind-like prefix */
   .text-primary { color: var(--color-primary); }
   .text-secondary { color: var(--color-secondary); }
-  .text-neutral-50 { color: var(--color-neutral-50); }
-  .text-neutral-900 { color: var(--color-neutral-900); }
 
   .text-primary-100 { color: var(--color-primary-100); }
   .text-primary-200 { color: var(--color-primary-200); }
@@ -113,8 +109,6 @@
   /* Background color utilities */
   .bg-primary { background-color: var(--color-primary); }
   .bg-secondary { background-color: var(--color-secondary); }
-  .bg-neutral-50 { background-color: var(--color-neutral-50); }
-  .bg-neutral-900 { background-color: var(--color-neutral-900); }
 
   .bg-primary-100 { background-color: var(--color-primary-100); }
   .bg-primary-200 { background-color: var(--color-primary-200); }
