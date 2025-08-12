@@ -8,3 +8,10 @@ interface ImportMetaEnv {
 interface ImportMeta {
 	readonly env: ImportMetaEnv;
 }
+
+// SFC module declaration (co-located here so vue-tsc picks it up reliably)
+declare module '*.vue' {
+	import type { DefineComponent } from 'vue';
+	const component: DefineComponent<Record<string, unknown>, Record<string, unknown>, unknown>;
+	export default component;
+}

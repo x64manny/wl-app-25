@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ES2022",
     "useDefineForClassFields": true,
-  "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "moduleDetection": "force",
     "strict": true,
     "jsx": "preserve",
@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "skipLibCheck": true,
-    "types": ["node", "vue"]
+  "types": ["node", "vue"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["dist", "node_modules"]
