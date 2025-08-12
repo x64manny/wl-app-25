@@ -1,14 +1,10 @@
 <template>
-  <main class="app min-h-screen bg-app text-primary-role">
-    <div class="flex justify-end mb-m">
-      <ThemeSwitch />
-    </div>
+  <main class="bg-app text-primary-role">
   </main>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import ThemeSwitch from './shared/ui/atoms/ThemeSwitch.vue';
 
 const currentTheme = ref('dark');
 onMounted(() => {
@@ -21,5 +17,4 @@ onMounted(() => {
 </script>
 
 <style>
-html, body, #app, .app { margin: 0; }
 </style>

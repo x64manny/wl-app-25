@@ -1,0 +1,1 @@
+Add actual PWA icons (192x192, 512x512, maskable variants) here. These are placeholders.
