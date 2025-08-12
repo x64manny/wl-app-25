@@ -1,26 +1,35 @@
 <template>
-  <main class="bg-app text-primary-role">
-    <div class="">
-      <div class="">
+  <div class="min-h-screen flex flex-col bg-app text-primary-role">
+    <WpAppBar>
+      <template #default>
         <ThemeSwitch />
-      </div>
-    </div>
-  </main>
+      </template>
+    </WpAppBar>
+    <main class="flex-1 pb-16" :class="layoutClass">
+      <router-view />
+    </main>
+    <WpBottomNav />
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import ThemeSwitch from './shared/ui/atoms/ThemeSwitch.vue';
+import WpAppBar from './shared/ui/atoms/WpAppBar.vue';
+import WpBottomNav from './shared/ui/atoms/WpBottomNav.vue';
 
-const currentTheme = ref('dark');
+const screenWidth = ref(window.innerWidth);
+function onResize(){ screenWidth.value = window.innerWidth; }
+window.addEventListener('resize', onResize);
 onMounted(() => {
-  currentTheme.value = document.documentElement.getAttribute('data-theme') || 'dark';
-  const observer = new MutationObserver(() => {
-    currentTheme.value = document.documentElement.getAttribute('data-theme') || 'dark';
-  });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  const attr = document.documentElement.getAttribute('data-theme');
+  if(!attr) document.documentElement.setAttribute('data-theme', 'dark');
+  requestAnimationFrame(() => document.documentElement.classList.add('theme-ready'));
 });
+
+const layoutClass = computed(() => screenWidth.value >= 840 ? 'grid grid-cols-2 gap-lg px-lg' : 'px-md');
 </script>
 
-<style>
+<style scoped>
+main { max-width: 1200px; margin: 0 auto; width: 100%; }
 </style>

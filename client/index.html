@@ -31,7 +31,25 @@
     </script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <noscript>Please enable JavaScript.</noscript>
+      <div id="__fallback" style="padding:1rem;color:#fff;background:#222;font-family:monospace">
+        Fallback shell: if you still see this after a second, Vue failed to mount.
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      // Detect unexpected DOM clearing post mount
+      (function(){
+        const target = document.getElementById('app');
+        if(!target) return;
+        const obs = new MutationObserver(()=>{
+          if(!target.children.length){
+            console.warn('[Diag] #app became empty');
+          }
+        });
+        obs.observe(target,{childList:true});
+      })();
+    </script>
   </body>
 </html>
