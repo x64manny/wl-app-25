@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .centered {
+    @apply mx-auto max-w-screen-md px-4;
+  }
+}
