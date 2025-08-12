@@ -1,0 +1,89 @@
+{
+  "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v11/terminal-keeper.json",
+  "theme": "tribe",
+  "active": "compliance",
+  "activateOnStartup": true,
+  "keepExistingTerminals": false,
+  "sessions": {
+    "default": [
+      {
+        "name": "hello",
+        "autoExecuteCommands": true,
+        "icon": "person",
+        "color": "terminal.ansiGreen",
+        "commands": [
+          "echo hello"
+        ]
+      },
+      [
+        {
+          "name": "docker:ros",
+          "commands": [
+            ""
+          ]
+        },
+        {
+          "name": "docker:k8s",
+          "commands": [
+            ""
+          ]
+        }
+      ],
+      [
+        {
+          "name": "docker:nats",
+          "commands": [
+            ""
+          ]
+        },
+        {
+          "name": "docker:fleet",
+          "commands": [
+            ""
+          ]
+        }
+      ]
+    ],
+    "compliance": [
+      {
+        "name": "git",
+        "autoExecuteCommands": true,
+        "icon": "git-branch",
+        "color": "terminal.ansiGreen",
+        "commands": [
+          "clear"
+        ]
+      },
+      [
+        {
+          "name": "client",
+          "autoExecuteCommands": true,
+          "icon": "zap",
+          "color": "terminal.ansiYellow",
+          "commands": [
+            "cd client",
+            "clear"
+          ]
+        },
+        {
+          "name": "server",
+          "autoExecuteCommands": true,
+          "icon": "server-environment",
+          "color": "terminal.ansiGreen",
+          "commands": [
+            "cd servert",
+            "clear"
+          ]
+        }
+      ]
+    ],
+    "saved-session": [
+      {
+        "name": "connect",
+        "commands": [
+          ""
+        ]
+      }
+    ]
+  }
+}

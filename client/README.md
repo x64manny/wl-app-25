@@ -18,7 +18,7 @@ Node.js 18+ (LTS) and npm. Recommended: install via nvm.
 
 ## Project Structure
 
-```
+``` md
 ├── index.html
 ├── package.json
 ├── src
@@ -43,7 +43,7 @@ Run the dev server:
 npm run dev
 ```
 
-Open the printed URL (default http://localhost:5173).
+Open the printed URL (default <http://localhost:5173>).
 
 ## Lint & Format
 

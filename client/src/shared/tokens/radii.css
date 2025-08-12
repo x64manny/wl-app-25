@@ -1,0 +1,36 @@
+:root {
+  /* Radii */
+  --radius-xxxs: 0.125rem; /* 2px */
+  --radius-xxs: 0.25rem;   /* 4px */
+  --radius-xs: 0.375rem;   /* 6px */
+  --radius-s: 0.5rem;      /* 8px */
+  --radius-m: 0.75rem;     /* 12px */
+  --radius-l: 1rem;        /* 16px */
+  --radius-xl: 1.5rem;     /* 24px */
+}
+
+
+@layer utilities {
+  /* Border Radius Utilities */
+  .rounded-xxxs {
+    border-radius: var(--radius-xxxs);
+  }
+  .rounded-xxs {
+    border-radius: var(--radius-xxs);
+  }
+  .rounded-xs {
+    border-radius: var(--radius-xs);
+  }
+  .rounded-s {
+    border-radius: var(--radius-s);
+  }
+  .rounded-m {
+    border-radius: var(--radius-m);
+  }
+  .rounded-l {
+    border-radius: var(--radius-l);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+}
