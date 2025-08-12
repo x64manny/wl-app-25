@@ -15,6 +15,14 @@ export const routes: RouteRecordRaw[] = [
   { path: '/user', component: UserPage }
 ];
 
+// Dev-only component gallery (not bundled in production)
+if (import.meta.env.DEV) {
+  routes.push({
+    path: '/testing/components',
+    component: () => import('../shared/ui/pages/testing/ComponentGallery.vue')
+  });
+}
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
