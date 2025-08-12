@@ -32,6 +32,43 @@
 }
 
 
+/* =========================================
+   THEME SEMANTIC TOKENS (Light/Dark)
+   ---------------------------------
+   Keep raw palette above; only remap semantic
+   role tokens inside theme scopes below.
+   Default: dark (set via inline script + attribute)
+========================================= */
+
+/* Light theme (also applies when no data-theme is specified but we'll set dark by script) */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-app: var(--color-gray-100);
+  --bg-surface: var(--color-white);
+  --bg-elevated: var(--color-gray-200);
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-700);
+  --border-color: var(--color-gray-300);
+  --accent: var(--color-primary-200);
+  --accent-hover: var(--color-primary-500);
+  --focus-ring: var(--color-primary-200);
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-app: var(--color-gray-900);
+  --bg-surface: var(--color-gray-700);
+  --bg-elevated: var(--color-gray-500);
+  --text-primary: var(--color-gray-100);
+  --text-secondary: var(--color-gray-300);
+  --border-color: var(--color-gray-500);
+  --accent: var(--color-primary-100);
+  --accent-hover: var(--color-primary-200);
+  --focus-ring: var(--color-primary-200);
+}
+
+
 
 @layer utilities {
 
@@ -66,6 +103,20 @@
   .white-alpha-20 { color: var(--color-white-alpha-20); }
   .white-alpha-10 { color: var(--color-white-alpha-10); }
 }
+
+/* Semantic role utility classes */
+@layer utilities {
+  .bg-app { background-color: var(--bg-app); }
+  .bg-surface { background-color: var(--bg-surface); }
+  .bg-elevated { background-color: var(--bg-elevated); }
+  .text-primary-role { color: var(--text-primary); }
+  .text-secondary-role { color: var(--text-secondary); }
+  .border-role { border-color: var(--border-color); }
+  .accent { color: var(--accent); }
+  .accent-bg { background-color: var(--accent); }
+  .focus-ring:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+}
+
 
 
 @layer utilities {
