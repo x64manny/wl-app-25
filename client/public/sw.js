@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wl-app-cache-v1';
+const CACHE_NAME = 'wl-app-cache-v2'; // bump to invalidate old cached HTML/assets
 const OFFLINE_URL = '/';
 
 self.addEventListener('install', (event) => {
@@ -29,17 +29,29 @@ self.addEventListener('fetch', (event) => {
   if (url.protocol === 'chrome-extension:' || url.pathname.startsWith('/@vite') || url.pathname.includes('hmr') || url.protocol === 'ws:' || url.protocol === 'wss:') {
     return; // Let the browser handle
   }
+  const isHTML = request.mode === 'navigate' || (request.headers.get('accept') || '').includes('text/html');
+  if (isHTML) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(()=>{});
+          return response;
+        })
+        .catch(() => caches.match(request).then(c => c || caches.match(OFFLINE_URL)))
+    );
+    return;
+  }
   event.respondWith(
     caches.match(request).then(cached => {
       if (cached) return cached;
       return fetch(request)
         .then(response => {
-          // Only cache basic/opaque responses with OK status
-            if (response && response.status === 200 && (response.type === 'basic' || response.type === 'opaqueredirect')) {
-              const copy = response.clone();
-              caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(()=>{});
-            }
-            return response;
+          if (response && response.status === 200 && (response.type === 'basic' || response.type === 'opaqueredirect')) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(()=>{});
+          }
+          return response;
         })
         .catch(() => caches.match(OFFLINE_URL));
     })

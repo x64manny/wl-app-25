@@ -1,10 +1,16 @@
 <template>
   <main class="bg-app text-primary-role">
+    <div class="">
+      <div class="">
+        <ThemeSwitch />
+      </div>
+    </div>
   </main>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import ThemeSwitch from './shared/ui/atoms/ThemeSwitch.vue';
 
 const currentTheme = ref('dark');
 onMounted(() => {
