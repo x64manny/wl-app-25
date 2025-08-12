@@ -1,0 +1,42 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.cache/
+.next/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.eggs/
+*.egg-info/
+.venv/
+venv/
+ENV/
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors
+.vscode/
+.idea/
+
+# Coverage / reports
+coverage/
+*.lcov
+
+# Misc
+*.swp
