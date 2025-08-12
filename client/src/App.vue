@@ -1,12 +1,10 @@
 <template>
   <main class="app">
-    <h1 class="bg-primary font-sans text-h7-bold">{{ title }}</h1>
+    <p class="">Hola Mundo</p>
   </main>
 </template>
 
 <script setup>
-
-const title = 'Nueva App';
 
 </script>
 
