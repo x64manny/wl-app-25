@@ -1,27 +1,64 @@
 # wl-app-25
 
-Initial repository scaffold.
+Vue 3 + Vite application scaffold.
 
-## Description
+## Prerequisites
 
-Starter repository initialized locally. Add your application source code under `src/` (create the folder) or any structure you prefer.
+Node.js 18+ (LTS) and npm. Recommended: install via nvm.
+
+## Scripts
+
+| Command | Description |
+| ------- | ----------- |
+| `npm run dev` | Start dev server with HMR |
+| `npm run build` | Production build (outputs to `dist/`) |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint on source files |
+| `npm run format` | Run Prettier to format code |
+
+## Project Structure
+
+```
+├── index.html
+├── package.json
+├── src
+│   ├── App.vue
+│   ├── main.js
+│   └── components
+│       └── Logo.vue
+├── vite.config.js
+```
 
 ## Getting Started
 
-1. Add code or documentation files.
-2. Commit changes:
+Install dependencies:
 
-   ```bash
-   git add .
-   git commit -m "Add feature X"
-   ```
+```bash
+npm install
+```
 
-3. Push to GitHub (after adding a remote):
+Run the dev server:
 
-   ```bash
-   git push origin main
-   ```
+```bash
+npm run dev
+```
+
+Open the printed URL (default http://localhost:5173).
+
+## Lint & Format
+
+```bash
+npm run lint
+npm run format
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
 
 ## License
 
-Specify a license (e.g. MIT) by adding a `LICENSE` file.
+Add a `LICENSE` file (e.g. MIT) if distributing.
