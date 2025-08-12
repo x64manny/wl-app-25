@@ -1,21 +1,19 @@
 <template>
   <main class="app">
-    <Logo />
     <h1>{{ title }}</h1>
+    <button @click="increment">Clicked {{ count }} times</button>
     <p>Edit <code>src/App.vue</code> and save to test HMR.</p>
   </main>
 </template>
 
-<script>
-import Logo from './components/Logo.vue';
+<script setup>
+import { ref } from 'vue';
 
-export default {
-  name: 'App',
-  components: { Logo },
-  data() {
-    return { title: 'Hello Vue 3 + Vite' };
-  },
-};
+const title = 'Hello Vue 3 + Vite (Composition API)';
+const count = ref(0);
+function increment() {
+  count.value += 1;
+}
 </script>
 
 <style>
