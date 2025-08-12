@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import WpButton from '../atoms/WpButton.vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
-function goDash(){ router.push('/dashboard'); }
+function goDash(): void { router.push('/dashboard'); }
 </script>
 
 <template>

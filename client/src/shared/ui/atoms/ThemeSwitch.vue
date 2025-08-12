@@ -11,30 +11,30 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
 import { IconSun, IconMoon } from '@tabler/icons-vue';
 
-const current = ref('dark');
+const current = ref<'dark' | 'light'>('dark');
 
-function setTheme(theme) {
+function setTheme(theme: 'dark' | 'light') {
   document.documentElement.setAttribute('data-theme', theme);
   try { localStorage.setItem('theme', theme); } catch(e) { /* ignore */ }
   current.value = theme;
 }
 
-function toggle() {
+function toggle(): void {
   setTheme(current.value === 'dark' ? 'light' : 'dark');
 }
 
 onMounted(() => {
   const attr = document.documentElement.getAttribute('data-theme');
-  current.value = attr || 'dark';
+  if (attr === 'dark' || attr === 'light') current.value = attr; else current.value = 'dark';
   // enable smooth transitions after initial paint
   requestAnimationFrame(() => document.documentElement.classList.add('theme-ready'));
 });
 
-const nextThemeLabel = computed(() => current.value === 'dark' ? 'light' : 'dark');
+const nextThemeLabel = computed<'light' | 'dark'>(() => current.value === 'dark' ? 'light' : 'dark');
 </script>
 
 <style scoped>

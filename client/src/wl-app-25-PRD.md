@@ -37,7 +37,7 @@ Crea átomos reutilizables en `components/atoms/`:
 - `WpCard` (padding, radius, borde por tokens).
 - `WpKpi` (título + valor; tamaños vía tokens).
 - `WpBadge` (ok/warn/bad; colores por tokens).
-- `WpAppBar`, `WpTabBar`, `WpFab`.
+- `WpTabBar`, `WpFab`.
 
 **Criterios:** sin estilos inline; solo utilidades Tailwind mapeadas a tokens.
 
